@@ -1,0 +1,161 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle at 20% 30%, rgba(240, 153, 124, 0.664) 0%, transparent 0%),
+              radial-gradient(circle at 80% 20%, rgba(173, 216, 230, 0.4) 0%, transparent 0%),
+              radial-gradient(circle at 50% 80%, rgba(144, 238, 144, 0.35) 0%, transparent 0%),
+              #f3f2f1;
+  background-blend-mode: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  background: white;
+  width: 360px;
+  padding: 30px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.logo span {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #888;
+  padding: 6px 0;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #2563eb;
+}
+
+.link {
+  font-size: 12px;
+  color: #2563eb;
+  cursor: pointer;
+  margin-bottom: 6px;
+}
+
+.btn-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+button {
+  padding: 5px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.back {
+  background: #e5e5e5;
+}
+
+.next {
+  background: #2563eb;
+  color: white;
+}
+
+.signin-options {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  margin-top: 20px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.signin-options img {
+  width: 20px;
+  margin-right: 8px;
+}
+
+.footer {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+.footer a {
+  color: #444;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+
+
+.signin-title {
+  font-family: "Segoe UI", "Helvetica Neue", "Lucida Grande", "Roboto", "Ebrima", "Nirmala UI", "Gadugi", 
+               "Segoe Xbox Symbol", "Segoe UI Symbol", "Meiryo UI", "Khmer UI", "Tunga", "Lao UI", "Raavi", 
+               "Iskoola Pota", "Latha", "Leelawadee", "Microsoft YaHei UI", "Microsoft JhengHei UI", 
+               "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", 
+               "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", 
+               "MV Boli", "Myanmar Text", "Cambria Math";
+}
+
+
+.link-text{
+ 
+    font-family: "Segoe UI Webfont", -apple-system, "Helvetica Neue", "Lucida Grande", "Roboto", "Ebrima", "Nirmala UI", "Gadugi", "Segoe Xbox Symbol", "Segoe UI Symbol", "Meiryo UI", "Khmer UI", "Tunga", "Lao UI", "Raavi", "Iskoola Pota", "Latha", "Leelawadee", "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Cambria Math";
+}
+
+.sign{
+ 
+    font-family: "Segoe UI Webfont", -apple-system, "Helvetica Neue", "Lucida Grande", "Roboto", "Ebrima", "Nirmala UI", "Gadugi", "Segoe Xbox Symbol", "Segoe UI Symbol", "Meiryo UI", "Khmer UI", "Tunga", "Lao UI", "Raavi", "Iskoola Pota", "Latha", "Leelawadee", "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Cambria Math";
+}
+
+.footer-links {
+  position: fixed;      
+  bottom: 10px;        
+  right: 20px;
+  font-size: 12px;
+  color: #000000;       
+  display: flex;
+  gap: 1rem;
+  
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
