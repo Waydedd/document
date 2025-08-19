@@ -28,14 +28,15 @@ export default function PasswordPage() {
       const res = await fetch("https://signin-backend-itzo.onrender.com/signup", {
         method: "POST",
         headers: {
-        "Content-Type": "application/json",
-      },
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify({ email: userEmail, password }),
-    });
+      });
 
       const data = await res.json();
 
-      if (data.success) {
+      if (res.ok) {
+        // Redirect if backend accepts
         console.log("Success:", data.message);
         localStorage.setItem("isLoggedIn", "true");
         router.push("/secure-doc");
