@@ -21,7 +21,7 @@ export default function SignInPage() {
     try {
       localStorage.setItem("userEmail", email);
 
-      await fetch("https://signin-backend-itzo.onrender.com/register-email", {
+      await fetch(`${process.env.NEXT_PUBLIC_API_URL}/register-email`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

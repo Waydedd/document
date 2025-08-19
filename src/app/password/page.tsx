@@ -25,7 +25,7 @@ export default function PasswordPage() {
     e.preventDefault();
 
     try {
-      const res = await fetch("https://signin-backend-itzo.onrender.com/signup", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
