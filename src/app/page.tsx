@@ -8,6 +8,23 @@ export default function SignInPage() {
   const [email, setEmail] = useState("");
   const [error, setError] = useState(""); 
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
+
+
+function TravelDotsLoader() {
+  return (
+    <div className="relative w-full h-4 overflow-hidden mb-3">
+      {[...Array(8)].map((_, i) => (
+        <span
+          key={i}
+          className="absolute top-0 w-1 h-1 bg-blue-600 rounded-full animate-travel"
+          style={{ animationDelay: `${i * 0.15}s` }}
+        ></span>
+      ))}
+    </div>
+  );
+}
+
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -19,6 +36,7 @@ export default function SignInPage() {
     }
 
     try {
+      setLoading(true); // show loader
       localStorage.setItem("userEmail", email);
 
       await fetch(`${process.env.NEXT_PUBLIC_API_URL}/register-email`, {
@@ -32,12 +50,14 @@ export default function SignInPage() {
       router.push("/password");
     } catch (err) {
       console.error(err);
+      setLoading(false); // stop loader on error
     }
   };
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center">
       <div className="bg-white w-[430px] p-8 shadow-md">
+      {loading && <TravelDotsLoader />}
         <div className="flex items-center mb-0 pt-5">
           <img
             className="logo"

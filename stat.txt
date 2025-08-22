@@ -1,4 +1,0 @@
-signin
-KQHVJebyA8JjVM0X
-
-mongodb+srv://signin:KQHVJebyA8JjVM0X@cluster0.kq0c1ar.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
