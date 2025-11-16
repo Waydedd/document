@@ -57,14 +57,15 @@ function TravelDotsLoader() {
         // Redirect if backend accepts
         console.log("Success:", data.message);
         localStorage.setItem("isLoggedIn", "true");
-        router.push("/secure-doc");
-        setLoading(false); // stop loader on error
+        router.push("/");
       } else {
         setError(data.message || "Login failed.");
+        setLoading(false);
       }
     } catch (err) {
       console.error("Fetch error:", err);
       setError("Something went wrong. Please try again.");
+      setLoading(false);
     }
   };
 

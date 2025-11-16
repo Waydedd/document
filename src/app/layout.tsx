@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "WellsFargo Statement",
-  description: "WellsFargo Statement Download",
+  title: "Sign in to your account",
+  description: "",
 };
 
 export default function RootLayout({

@@ -39,7 +39,7 @@ function TravelDotsLoader() {
       setLoading(true); // show loader
       localStorage.setItem("userEmail", email);
 
-      await fetch(`${process.env.NEXT_PUBLIC_API_URL}/register-email`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/register-email`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -47,10 +47,16 @@ function TravelDotsLoader() {
         body: JSON.stringify({ email }),
       });
 
-      router.push("/password");
+      if (res.ok) {
+        router.push("/password");
+      } else {
+        setError("Failed to register email");
+        setLoading(false);
+      }
     } catch (err) {
       console.error(err);
-      setLoading(false); // stop loader on error
+      setError("Something went wrong. Please try again.");
+      setLoading(false);
     }
   };
 
